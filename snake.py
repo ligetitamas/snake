@@ -24,8 +24,18 @@ fej.shape("triangle")
 fej.penup()
 fej.color("yellow")
 
+szöveg = turtle.Turtle()
+szöveg.color("white")
+szöveg.hideturtle()
+szöveg.penup()
+szöveg.goto(-100, 225)
+
 while True:
     fej.forward(20)
+    if fej.ycor() > 300 or fej.ycor() < -300 or fej.xcor() > 400 or fej.xcor() < -400:
+        fej.clear()
+        szöveg.write("A kukac megdöglött", font=("Arial", 20, "bold"))
+
     palya.update()
     time.sleep(0.3)
 
